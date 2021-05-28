@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipping cards</title>
+    <style>
+      /* part2 */
+    .col {
+    float: left;
+    width: 15%;
+    padding: 0 10px;
+    }
+
+    .flip-card {
+        background-color: transparent;
+        width: 240px;
+        height: 380px;
+        background: "yellow";
+        border: 1px solid #f1f1f1;
+        perspective: 1000px; 
+        display: inline-block;
+
+        }
+    
+        /*position the front and back side */
+        .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+        }
+    
+        /* horizontal flip when mouse over the flip box container */
+        .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+        }
+    
+        /* Position the front and back side */
+        .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        }
+    
+        /* Style the front side (fallback if image is missing) */
+        .flip-card-front {
+        background-color: #bbb;
+        color: black;
+        }
+    
+        /* Style the back side */
+        .flip-card-back {
+        background-color: dodgerblue;
+        color: white;
+        transform: rotateY(180deg);
+        }
+    
+        
+    </style>
+</head>
+<body>
+        <!-- flipping cards -->
+    <div class = "col">
+   <div class="flip-card " >
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="imageCards.png" alt="profile" style="width:240px;height:300px; object-fit: contain;">
+        <h1>Aryan</h1>
+      </div>
+      <div class="flip-card-back">
+        <p>Algorithmic trader</p>
+        <p>Everyone loves his humour!</p>
+      </div>
+    </div>
+    </div>
+    </div>
+    <div class = "col">
+    <div class="flip-card " >
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="imageCards.png" alt="profile" style="width:240px;height:300px;object-fit: contain;">
+            <h1>Arpit</h1>
+          </div>
+          <div class="flip-card-back">
+            
+            <p>Administrative Head</p>
+            <p>He crunches those numbers well!</p>
+          </div>
+        </div>
+    </div>
+    </div>
+    <div class = "col">
+    <div class="flip-card" >
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="imageCards.png" alt="profile" style="width:240px;height:300px; object-fit: contain;">
+            <h1>Kageyama kun</h1>
+          </div>
+          <div class="flip-card-back">
+            <p>High School Student</p>
+            <p>He is always eager to help & acts with virtue.</p>
+          </div>
+        </div>
+    </div>
+    </div>
+    <div class = "col">
+    
+    <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="imageCards.png" alt="profile" style="width:240px;height:300px; object-fit: contain;">
+            <h1>Kowalski</h1>
+          </div>
+          <div class="flip-card-back">
+            <p>Smart German Detective</p>
+            <p>He always comes up with brilliant plans!</p>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+    
+</body>
+</html>

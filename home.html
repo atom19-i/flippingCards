@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+    .navbar{
+        overflow: hidden;
+        background-color: #333;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .navbar a{
+        float:left;
+        font-size: 16px;
+        color:white;
+        text-align:center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .dropdown{
+        float:left;
+        overflow:hidden;
+    }
+
+    .dropdown .dropbtn{
+        cursor:pointer;
+        font-size: 16px;
+        border: none ;
+        outline: none;
+        color:white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+
+    .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus{
+        background-color: red;
+    }
+
+    .dropdown-content{
+        display:none ;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a{
+        float:none;
+        color:black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+    .dropdown-content a:hover{
+        background-color: #ddd;
+    }
+
+    .show{
+        display: block;
+    }
+
+    .item-1, 
+    .item-2, 
+    .item-3 {
+	position: absolute;
+    display: block;
+        top: 2em;
+    
+    width: 60%;
+    
+    font-size: 2em;
+
+	animation-duration: 20s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+    }
+
+    .item-1{
+        animation-name: anim-1;
+    }
+
+    .item-2{
+        animation-name: anim-2;
+    }
+
+    .item-3{
+        animation-name: anim-3;
+    }
+
+    @keyframes anim-1 {
+        0%, 8.3% { left: -100%; opacity: 0; }
+    8.3%,25% { left: 25%; opacity: 1; }
+    33.33%, 100% { left: 110%; opacity: 0; }
+    }
+
+    @keyframes anim-2 {
+        0%, 33.33% { left: -100%; opacity: 0; }
+    41.63%, 58.29% { left: 25%; opacity: 1; }
+    66.66%, 100% { left: 110%; opacity: 0; }
+    }
+
+    @keyframes anim-3 {
+        0%, 66.66% { left: -100%; opacity: 0; }
+    74.96%, 91.62% { left: 25%; opacity: 1; }
+    100% { left: 110%; opacity: 0; }
+    }
+
+
+
+    </style>
+    </head>
+    <body>
+        <div class="navbar">
+        <a href="#home">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="func()">Dropdown
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="thedropdown">
+                <a href="fc.html" target="_blank">Flipping Cards
+                </a>
+            </div>
+        </div>
+    </div> 
+
+   <section id="p1">
+   <marquee direction="right">Welcome to Home Page!</marquee>
+
+   <!-- text slideshow -->
+   <p class="item-1">This is your last chance. After this, there is no turning back.</p>
+
+   <p class="item-2">You take the blue pill - the story ends, you wake up in your bed and believe whatever you want to believe.</p>
+
+    <p class="item-3">You take the red pill - you stay in Wonderland and I show you how deep the rabbit-hole goes.</p>
+
+   </section>
+
+   <section id="p2">
+  
+  
+
+   </section>
+
+
+
+
+
+
+
+
+  <!-- dropdown -->
+   <script>
+   function func(){
+       document.getElementById("thedropdown").classList.toggle("show") ;
+   }
+    
+
+
+
+    window.onclick = function(e){
+        if(!e.target.matches('.dropbtn')){
+            var thedropdown = document.getElementById("thedropdown");
+            if(thedropdown.classList.contains('show')){
+                thedropdown.classList.remove('show');
+            }
+        }
+    }
+   </script>
+</body>
+</html>
